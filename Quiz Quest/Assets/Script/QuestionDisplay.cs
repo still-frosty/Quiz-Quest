@@ -11,19 +11,30 @@ public class QuestionDisplay : MonoBehaviour
     public GameObject answerB;
     public GameObject answerC;
     public GameObject answerD;
+    public static string newQuestion;
+    public static string newA;
+    public static string newB;
+    public static string newC;
+    public static string newD;
 
     void Start()
     {
-        screenQuestion.GetComponent<TMP_Text>().text = "How much will you be paid to kill a mouse?";
-        answerA.GetComponent<TMP_Text>().text = "A. $10";
-        answerB.GetComponent<TMP_Text>().text = "B. $20";
-        answerC.GetComponent<TMP_Text>().text = "C. $30";
-        answerD.GetComponent<TMP_Text>().text = "D. $40";
+        StartCoroutine(PushTextOnScreen());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator PushTextOnScreen()
+    {
+        yield return new WaitForSeconds(0.25f);
+        screenQuestion.GetComponent<TMP_Text>().text = newQuestion;
+        answerA.GetComponent<TMP_Text>().text = newA;
+        answerB.GetComponent<TMP_Text>().text = newB;
+        answerC.GetComponent<TMP_Text>().text = newC;
+        answerD.GetComponent<TMP_Text>().text = newD;
     }
 }
