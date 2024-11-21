@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AnswerButton : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class AnswerButton : MonoBehaviour
     public AudioSource correctFX;
     public AudioSource wrongFX;
 
+    public GameObject currentScore;
+    public int scoreValue;
+
+    void Update()
+    {
+        currentScore.GetComponent<TMP_Text>().text = "Score: " + scoreValue;
+    }
+
     public void AnswerA()
     {
         if (QuestionGenerate.actualAnswer == "A")
@@ -36,17 +45,20 @@ public class AnswerButton : MonoBehaviour
             answerAbackGreen.SetActive(true);
             answerAbackBlue.SetActive(false);
             correctFX.Play();
+            scoreValue += 5;
         }
         else
         {
             answerAbackRed.SetActive(true);
             answerAbackBlue.SetActive(false);
             wrongFX.Play();
+            scoreValue = 0;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
         answerC.GetComponent<Button>().enabled = false;
         answerD.GetComponent<Button>().enabled = false;
+        StartCoroutine(NextQuestion());
     }
 
     public void AnswerB()
@@ -56,17 +68,20 @@ public class AnswerButton : MonoBehaviour
             answerBbackGreen.SetActive(true);
             answerBbackBlue.SetActive(false);
             correctFX.Play();
+            scoreValue += 5;
         }
         else
         {
             answerBbackRed.SetActive(true);
             answerBbackBlue.SetActive(false);
             wrongFX.Play();
+            scoreValue = 0;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
         answerC.GetComponent<Button>().enabled = false;
         answerD.GetComponent<Button>().enabled = false;
+        StartCoroutine(NextQuestion());
     }
 
     public void AnswerC()
@@ -76,17 +91,20 @@ public class AnswerButton : MonoBehaviour
             answerCbackGreen.SetActive(true);
             answerCbackBlue.SetActive(false);
             correctFX.Play();
+            scoreValue += 5;
         }
         else
         {
             answerCbackRed.SetActive(true);
             answerCbackBlue.SetActive(false);
             wrongFX.Play();
+            scoreValue = 0;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
         answerC.GetComponent<Button>().enabled = false;
         answerD.GetComponent<Button>().enabled = false;
+        StartCoroutine(NextQuestion());
     }
 
     public void AnswerD()
@@ -96,16 +114,46 @@ public class AnswerButton : MonoBehaviour
             answerDbackGreen.SetActive(true);
             answerDbackBlue.SetActive(false);
             correctFX.Play();
+            scoreValue += 5;
         }
         else
         {
             answerDbackRed.SetActive(true);
             answerDbackBlue.SetActive(false);
             wrongFX.Play();
+            scoreValue = 0;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
         answerC.GetComponent<Button>().enabled = false;
         answerD.GetComponent<Button>().enabled = false;
+        StartCoroutine(NextQuestion());
+    }
+
+    IEnumerator NextQuestion()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        answerAbackGreen.SetActive(false);
+        answerBbackGreen.SetActive(false);
+        answerCbackGreen.SetActive(false);
+        answerDbackGreen.SetActive(false);
+
+        answerAbackRed.SetActive(false);
+        answerBbackRed.SetActive(false);
+        answerCbackRed.SetActive(false);
+        answerDbackRed.SetActive(false);
+
+        answerAbackBlue.SetActive(true);
+        answerBbackBlue.SetActive(true);
+        answerCbackBlue.SetActive(true);
+        answerDbackBlue.SetActive(true);
+
+        answerA.GetComponent<Button>().enabled = true;
+        answerB.GetComponent<Button>().enabled = true;
+        answerC.GetComponent<Button>().enabled = true;
+        answerD.GetComponent<Button>().enabled = true;
+
+        QuestionGenerate.displayingQuestion = false;
     }
 }

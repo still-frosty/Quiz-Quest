@@ -17,15 +17,15 @@ public class QuestionDisplay : MonoBehaviour
     public static string newC;
     public static string newD;
 
-    void Start()
-    {
-        StartCoroutine(PushTextOnScreen());
-    }
+    public static bool pleaseUpdate = false;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (pleaseUpdate == false)
+        {
+            pleaseUpdate = true;
+            StartCoroutine(PushTextOnScreen());
+        }
     }
 
     IEnumerator PushTextOnScreen()
