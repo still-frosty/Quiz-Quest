@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
 
     public void BrainTeasers()
     {
-        SceneManager.LoadScene("BrainTeasers");
+        SceneManager.LoadScene("QuizBoard");
     }
 
     public void SportsAndGames()
@@ -35,5 +35,10 @@ public class Menu : MonoBehaviour
     public void HistoryAndNature()
     {
         SceneManager.LoadScene("HistoryAndNature");
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene("Start");
     }
 }

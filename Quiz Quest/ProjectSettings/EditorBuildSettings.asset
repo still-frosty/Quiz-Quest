@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 07d63e108b7a82444870bbc731a4e3e1
+  - enabled: 1
+    path: Assets/Scenes/QuizBoard.unity
+    guid: b0991a9f127994d3fbeecb123f6d5396
   m_configObjects: {}

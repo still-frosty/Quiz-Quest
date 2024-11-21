@@ -1545,7 +1545,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1082102882}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: HistoryAndNature
+        m_MethodName: Return
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
