@@ -35,6 +35,8 @@ public class AnswerButton : MonoBehaviour
     public int bestScore;
     public GameObject bestDisplay;
 
+    public GameObject visual001;
+
     void Start()
     {
         bestScore = PlayerPrefs.GetInt("BestScoreQuiz", 0);
@@ -147,6 +149,8 @@ public class AnswerButton : MonoBehaviour
             bestDisplay.GetComponent<TMP_Text>().text = "Best: " + scoreValue;
         }
         yield return new WaitForSeconds(1.5f);
+
+        visual001.SetActive(false);
 
         answerAbackGreen.SetActive(false);
         answerBbackGreen.SetActive(false);

@@ -7,13 +7,14 @@ public class QuestionGenerate : MonoBehaviour
     public static string actualAnswer;
     public static bool displayingQuestion = false;
     public int questionNumber;
+    public GameObject visual001;
 
     void Update()
     {
         if (displayingQuestion == false)
         {
             displayingQuestion = true;
-            questionNumber = Random.Range(1, 11);
+            questionNumber = Random.Range(1, 12);
             if (questionNumber == 1)
             {
                 QuestionDisplay.newQuestion = "When did O, Canada officially become the national anthem?";
@@ -103,6 +104,16 @@ public class QuestionGenerate : MonoBehaviour
                 QuestionDisplay.newC = "C. Torquay";
                 QuestionDisplay.newD = "D. Great Yarmouth";
                 actualAnswer = "C";
+            }
+            else if (questionNumber == 11)
+            {
+                QuestionDisplay.newQuestion = "What country flag is this?";
+                QuestionDisplay.newA = "A. China";
+                QuestionDisplay.newB = "B. Spain";
+                QuestionDisplay.newC = "C. South Sudan";
+                QuestionDisplay.newD = "D. Germany";
+                visual001.SetActive(true);
+                actualAnswer = "B";
             }
 
             //all question go above this line
