@@ -16,7 +16,7 @@ public class QuestionGenerate : MonoBehaviour
         if (displayingQuestion == false)
         {
             displayingQuestion = true;
-            questionNumber = Random.Range(1, 21);
+            questionNumber = Random.Range(1, 26);
             if (questionNumber == 1)
             {
                 QuestionDisplay.newQuestion = "When did O, Canada officially become the national anthem?";
@@ -28,7 +28,7 @@ public class QuestionGenerate : MonoBehaviour
             }
             else if (questionNumber == 2)
             {
-                QuestionDisplay.newQuestion = "Which member of the English band &quot;The xx&quot; released their solo album &quot;In Colour&quot; in 2015?";
+                QuestionDisplay.newQuestion = "Which member of the English band 'The xx' released their solo album 'In Colour' in 2015?";
                 QuestionDisplay.newA = "A. Romy Madley Croft";
                 QuestionDisplay.newB = "B. Jamie xx";
                 QuestionDisplay.newC = "C. Oliver Sim";
@@ -199,6 +199,51 @@ public class QuestionGenerate : MonoBehaviour
                 QuestionDisplay.newC = "C. Werner Heisenberg";
                 QuestionDisplay.newD = "D. Yasser Arafat";
                 actualAnswer = "B";
+            }
+            else if (questionNumber == 21)
+            {
+                QuestionDisplay.newQuestion = "When was Hubba Bubba first introduced?";
+                QuestionDisplay.newA = "A. 1880";
+                QuestionDisplay.newB = "B. 1979";
+                QuestionDisplay.newC = "C. 2000";
+                QuestionDisplay.newD = "D. 1990";
+                actualAnswer = "B";
+            }
+            else if (questionNumber == 22)
+            {
+                QuestionDisplay.newQuestion = "The AHL affiliate team of the Boston Bruins is named what?";
+                QuestionDisplay.newA = "A. Providence Bruins";
+                QuestionDisplay.newB = "B. New Haven Bruins";
+                QuestionDisplay.newC = "C. Cambridge Bruins";
+                QuestionDisplay.newD = "D. Hartford Bruins";
+                actualAnswer = "A";
+            }
+            else if (questionNumber == 23)
+            {
+                QuestionDisplay.newQuestion = "Which member of the Velvet Room is not a playable character in Persona 4 Arena Ultimax?";
+                QuestionDisplay.newA = "A. Marie";
+                QuestionDisplay.newB = "B. Margaret";
+                QuestionDisplay.newC = "C. Elizabeth";
+                QuestionDisplay.newD = "D. Theodore";
+                actualAnswer = "D";
+            }
+            else if (questionNumber == 24)
+            {
+                QuestionDisplay.newQuestion = "In a 1994 CBS interview, Microsoft co-founder Bill Gates performed what unusual trick on camera?";
+                QuestionDisplay.newA = "A. Jumping backwards over a desk";
+                QuestionDisplay.newB = "B. Standing on his head";
+                QuestionDisplay.newC = "C. Jumping over an office chair";
+                QuestionDisplay.newD = "D. Typing on a keyboard during a handstand";
+                actualAnswer = "C";
+            }
+            else if (questionNumber == 25)
+            {
+                QuestionDisplay.newQuestion = "Before 2016, in which other year did Donald Trump run for President?";
+                QuestionDisplay.newA = "A. 2000";
+                QuestionDisplay.newB = "B. 1988";
+                QuestionDisplay.newC = "C. 1993";
+                QuestionDisplay.newD = "D. 2008";
+                actualAnswer = "A";
             }
 
             //all question go above this line
