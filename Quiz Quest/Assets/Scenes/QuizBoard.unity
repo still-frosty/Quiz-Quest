@@ -3381,6 +3381,8 @@ MonoBehaviour:
   wrongFX: {fileID: 1057454702}
   currentScore: {fileID: 1764605485}
   scoreValue: 0
+  bestScore: 0
+  bestDisplay: {fileID: 2142147086}
 --- !u!1 &2142147086
 GameObject:
   m_ObjectHideFlags: 0

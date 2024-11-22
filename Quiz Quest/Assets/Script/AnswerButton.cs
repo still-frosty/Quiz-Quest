@@ -32,6 +32,14 @@ public class AnswerButton : MonoBehaviour
 
     public GameObject currentScore;
     public int scoreValue;
+    public int bestScore;
+    public GameObject bestDisplay;
+
+    void Start()
+    {
+        bestScore = PlayerPrefs.GetInt("BestScoreQuiz", 0);
+        bestDisplay.GetComponent<TMP_Text>().text = "Best: " + bestScore;
+    }
 
     void Update()
     {
@@ -52,7 +60,7 @@ public class AnswerButton : MonoBehaviour
             answerAbackRed.SetActive(true);
             answerAbackBlue.SetActive(false);
             wrongFX.Play();
-            scoreValue = 0;
+            scoreValue -= 1;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
@@ -75,7 +83,7 @@ public class AnswerButton : MonoBehaviour
             answerBbackRed.SetActive(true);
             answerBbackBlue.SetActive(false);
             wrongFX.Play();
-            scoreValue = 0;
+            scoreValue -= 1;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
@@ -98,7 +106,7 @@ public class AnswerButton : MonoBehaviour
             answerCbackRed.SetActive(true);
             answerCbackBlue.SetActive(false);
             wrongFX.Play();
-            scoreValue = 0;
+            scoreValue -= 1;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
@@ -121,7 +129,7 @@ public class AnswerButton : MonoBehaviour
             answerDbackRed.SetActive(true);
             answerDbackBlue.SetActive(false);
             wrongFX.Play();
-            scoreValue = 0;
+            scoreValue -= 1;
         }
         answerA.GetComponent<Button>().enabled = false;
         answerB.GetComponent<Button>().enabled = false;
@@ -132,6 +140,12 @@ public class AnswerButton : MonoBehaviour
 
     IEnumerator NextQuestion()
     {
+        if (bestScore < scoreValue)
+        {
+            PlayerPrefs.SetInt("BestScoreQuiz", scoreValue);
+            bestScore = scoreValue;
+            bestDisplay.GetComponent<TMP_Text>().text = "Best: " + scoreValue;
+        }
         yield return new WaitForSeconds(1.5f);
 
         answerAbackGreen.SetActive(false);
