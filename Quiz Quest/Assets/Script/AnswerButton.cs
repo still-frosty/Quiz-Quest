@@ -36,6 +36,8 @@ public class AnswerButton : MonoBehaviour
     public GameObject bestDisplay;
 
     public GameObject visual001;
+    public GameObject visual002;
+    public GameObject visual003;
 
     void Start()
     {
@@ -151,6 +153,8 @@ public class AnswerButton : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         visual001.SetActive(false);
+        visual002.SetActive(false);
+        visual003.SetActive(false);
 
         answerAbackGreen.SetActive(false);
         answerBbackGreen.SetActive(false);

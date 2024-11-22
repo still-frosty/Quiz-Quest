@@ -8,13 +8,15 @@ public class QuestionGenerate : MonoBehaviour
     public static bool displayingQuestion = false;
     public int questionNumber;
     public GameObject visual001;
+    public GameObject visual002;
+    public GameObject visual003;
 
     void Update()
     {
         if (displayingQuestion == false)
         {
             displayingQuestion = true;
-            questionNumber = Random.Range(1, 12);
+            questionNumber = Random.Range(1, 21);
             if (questionNumber == 1)
             {
                 QuestionDisplay.newQuestion = "When did O, Canada officially become the national anthem?";
@@ -35,7 +37,7 @@ public class QuestionGenerate : MonoBehaviour
             }
             else if (questionNumber == 3)
             {
-                QuestionDisplay.newQuestion = "Who is the leader of Team Instinct in Pok&eacute;mon Go?";
+                QuestionDisplay.newQuestion = "Who is the leader of Team Instinct in Pokemon Go?";
                 QuestionDisplay.newA = "A. Blanche";
                 QuestionDisplay.newB = "B. Spark";
                 QuestionDisplay.newC = "C. Candela";
@@ -53,7 +55,7 @@ public class QuestionGenerate : MonoBehaviour
             }
             else if (questionNumber == 5)
             {
-                QuestionDisplay.newQuestion = "In what year was the movie &quot;Police Academy&quot; released?";
+                QuestionDisplay.newQuestion = "In what year was the movie 'Police Academy' released?";
                 QuestionDisplay.newA = "A. 1984";
                 QuestionDisplay.newB = "B. 1986";
                 QuestionDisplay.newC = "C. 1985";
@@ -89,7 +91,7 @@ public class QuestionGenerate : MonoBehaviour
             }
             else if (questionNumber == 9)
             {
-                QuestionDisplay.newQuestion = "On a standard Monopoly board, which square is diagonally opposite &#039;Go&#039;?";
+                QuestionDisplay.newQuestion = "On the standard Monopoly board, free parking is diagonally opposite of 'go'";
                 QuestionDisplay.newA = "A. Free Parking";
                 QuestionDisplay.newB = "B. Go to Jail";
                 QuestionDisplay.newC = "C. Jail";
@@ -98,11 +100,11 @@ public class QuestionGenerate : MonoBehaviour
             }
             else if (questionNumber == 10)
             {
-                QuestionDisplay.newQuestion = "In which British seaside town was the BBC sitcom &quot;Fawlty Towers&quot; set?";
-                QuestionDisplay.newA = "A. Blackpool";
-                QuestionDisplay.newB = "B. Bournemouth";
-                QuestionDisplay.newC = "C. Torquay";
-                QuestionDisplay.newD = "D. Great Yarmouth";
+                QuestionDisplay.newQuestion = "When was the original Star Wars: Battlefront II released?";
+                QuestionDisplay.newA = "A. November 21, 2006";
+                QuestionDisplay.newB = "B. September 9, 2007";
+                QuestionDisplay.newC = "C. October 31, 2005";
+                QuestionDisplay.newD = "D. December 18, 2004";
                 actualAnswer = "C";
             }
             else if (questionNumber == 11)
@@ -113,6 +115,89 @@ public class QuestionGenerate : MonoBehaviour
                 QuestionDisplay.newC = "C. South Sudan";
                 QuestionDisplay.newD = "D. Germany";
                 visual001.SetActive(true);
+                actualAnswer = "B";
+            }
+            else if (questionNumber == 12)
+            {
+                QuestionDisplay.newQuestion = "What country flag is this?";
+                QuestionDisplay.newA = "A. United States of America";
+                QuestionDisplay.newB = "B. Tokyo";
+                QuestionDisplay.newC = "C. Egpty";
+                QuestionDisplay.newD = "D. Russia";
+                visual002.SetActive(true);
+                actualAnswer = "A";
+            }
+            else if (questionNumber == 13)
+            {
+                QuestionDisplay.newQuestion = "What country flag is this?";
+                QuestionDisplay.newA = "A. China";
+                QuestionDisplay.newB = "B. Ghana";
+                QuestionDisplay.newC = "C. South Sudan";
+                QuestionDisplay.newD = "D. Nigeria";
+                visual003.SetActive(true);
+                actualAnswer = "D";
+            }
+            else if (questionNumber == 14)
+            {
+                QuestionDisplay.newQuestion = "What was the first Super Mario game ever released in North America for the 3DS?";
+                QuestionDisplay.newA = "A. Super Mario 3D Land";
+                QuestionDisplay.newB = "B. Super Mario Maker";
+                QuestionDisplay.newC = "C. New Super Mario Bros. 2";
+                QuestionDisplay.newD = "D. Mario Kart 7";
+                actualAnswer = "A";
+            }
+            else if (questionNumber == 15)
+            {
+                QuestionDisplay.newQuestion = "Which of these songs by artist Eminem contain the lyric 'Nice to meet you. Hi, my name is... I forgot my name!'?";
+                QuestionDisplay.newA = "A. Square Dance";
+                QuestionDisplay.newB = "B. Kim";
+                QuestionDisplay.newC = "C. Without Me";
+                QuestionDisplay.newD = "D. Rain Man";
+                actualAnswer = "D";
+            }
+            else if (questionNumber == 16)
+            {
+                QuestionDisplay.newQuestion = "Who was the inspiration for Cuthbert Calculus in the Tintin series?";
+                QuestionDisplay.newA = "A. Will Morris";
+                QuestionDisplay.newB = "B. Auguste Picard";
+                QuestionDisplay.newC = "C. Jacques Piccard";
+                QuestionDisplay.newD = "D. J. Cecil Maby";
+                actualAnswer = "B";
+            }
+            else if (questionNumber == 17)
+            {
+                QuestionDisplay.newQuestion = "Which team was the 2015-2016 NBA Champions?";
+                QuestionDisplay.newA = "A. Golden State Warriors";
+                QuestionDisplay.newB = "B. Toronto Raptors";
+                QuestionDisplay.newC = "C. Cleveland Cavaliers";
+                QuestionDisplay.newD = "D. Oklahoma City Thunders";
+                actualAnswer = "C";
+            }
+            else if (questionNumber == 18)
+            {
+                QuestionDisplay.newQuestion = "When someone is inexperienced they are said to be what color?";
+                QuestionDisplay.newA = "A. Green";
+                QuestionDisplay.newB = "B. Purple";
+                QuestionDisplay.newC = "C. Red";
+                QuestionDisplay.newD = "D. Black";
+                actualAnswer = "A";
+            }
+            else if (questionNumber == 19)
+            {
+                QuestionDisplay.newQuestion = "Greenland is a part of which kingdom?";
+                QuestionDisplay.newA = "A. Sweden";
+                QuestionDisplay.newB = "B. Norway";
+                QuestionDisplay.newC = "C. Denmark";
+                QuestionDisplay.newD = "D. United Kingdom";
+                actualAnswer = "C";
+            }
+            else if (questionNumber == 20)
+            {
+                QuestionDisplay.newQuestion = "Who is the youngest person to recieve a Nobel Prize?";
+                QuestionDisplay.newA = "A. Lawrence Bragg";
+                QuestionDisplay.newB = "B. SMalala Yousafzai";
+                QuestionDisplay.newC = "C. Werner Heisenberg";
+                QuestionDisplay.newD = "D. Yasser Arafat";
                 actualAnswer = "B";
             }
 
