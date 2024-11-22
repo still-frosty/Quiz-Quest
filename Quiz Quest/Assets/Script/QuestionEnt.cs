@@ -8,12 +8,16 @@ public class QuestionEnt : MonoBehaviour
     public static bool displayingQuestion = false;
     public int questionNumber;
 
+    public GameObject visual001;
+    public GameObject visual002;
+    public GameObject visual003;
+
     void Update()
     {
         if (displayingQuestion == false)
         {
             displayingQuestion = true;
-            questionNumber = Random.Range(1, 31);
+            questionNumber = Random.Range(1, 30);
             if (questionNumber == 1)
             {
                 QuestionDisplay.newQuestion = "Brendan Fraser starred in the following movies, except which one?";
@@ -104,16 +108,6 @@ public class QuestionEnt : MonoBehaviour
                 QuestionDisplay.newD = "D. K.A.R.E.N.";
                 actualAnswer = "A";
             }
-            // else if (questionNumber == 11)
-            // {
-            //     QuestionDisplay.newQuestion = "What country flag is this?";
-            //     QuestionDisplay.newA = "A. China";
-            //     QuestionDisplay.newB = "B. Spain";
-            //     QuestionDisplay.newC = "C. South Sudan";
-            //     QuestionDisplay.newD = "D. Germany";
-            //     visual001.SetActive(true);
-            //     actualAnswer = "B";
-            // }
             else if (questionNumber == 11)
             {
                 QuestionDisplay.newQuestion = "Who sang the hit song 'Blinding Lights'?";
@@ -161,11 +155,12 @@ public class QuestionEnt : MonoBehaviour
             }
             else if (questionNumber == 16)
             {
-                QuestionDisplay.newQuestion = "Which author wrote the book series *A Song of Ice and Fire*?";
-                QuestionDisplay.newA = "A. George R.R. Martin";
-                QuestionDisplay.newB = "B. J.K. Rowling";
-                QuestionDisplay.newC = "C. J.R.R. Tolkien";
-                QuestionDisplay.newD = "D. Stephen King";
+                QuestionDisplay.newQuestion = "Which character's logo is this?";
+                QuestionDisplay.newA = "A. Batman";
+                QuestionDisplay.newB = "B. Superman";
+                QuestionDisplay.newC = "C. Iron man";
+                QuestionDisplay.newD = "D. Spider-Man";
+                visual001.SetActive(true);
                 actualAnswer = "A";
             }
             else if (questionNumber == 17)
@@ -197,12 +192,13 @@ public class QuestionEnt : MonoBehaviour
             }
             else if (questionNumber == 20)
             {
-                QuestionDisplay.newQuestion = "Which classic novel begins with the line 'Call me Ishmael'?";
-                QuestionDisplay.newA = "A. *Moby Dick*";
-                QuestionDisplay.newB = "B. *The Great Gatsby*";
-                QuestionDisplay.newC = "C. *1984*";
-                QuestionDisplay.newD = "D. *Pride and Prejudice*";
-                actualAnswer = "A";
+                QuestionDisplay.newQuestion = "Which movie features this iconic poster?";
+                QuestionDisplay.newA = "A. Jaws";
+                QuestionDisplay.newB = "B. The Godfather";
+                QuestionDisplay.newC = "C. Titanic";
+                QuestionDisplay.newD = "D. The Matrix";
+                visual002.SetActive(true);
+                actualAnswer = "D";
             }
             else if (questionNumber == 21)
             {
@@ -251,11 +247,12 @@ public class QuestionEnt : MonoBehaviour
             }
             else if (questionNumber == 26)
             {
-                QuestionDisplay.newQuestion = "What is the title of the longest-running Broadway musical of all time?";
-                QuestionDisplay.newA = "A. *Les Misérables*";
-                QuestionDisplay.newB = "B. *Cats*";
-                QuestionDisplay.newC = "C. *The Phantom of the Opera*";
-                QuestionDisplay.newD = "D. *Chicago*";
+                QuestionDisplay.newQuestion = "Which movie does this iconic scene belong to?";
+                QuestionDisplay.newA = "A. Inception";
+                QuestionDisplay.newB = "B. Titanic";
+                QuestionDisplay.newC = "C. The Great Gatsby";
+                QuestionDisplay.newD = "D. The Wol of Wall Street";
+                visual003.SetActive(true);
                 actualAnswer = "C";
             }
             else if (questionNumber == 27)
@@ -285,15 +282,15 @@ public class QuestionEnt : MonoBehaviour
                 QuestionDisplay.newD = "D. Genovia";
                 actualAnswer = "B";
             }
-            else if (questionNumber == 30)
-            {
-                QuestionDisplay.newQuestion = "Which singer released the album *25* in 2015?";
-                QuestionDisplay.newA = "A. Taylor Swift";
-                QuestionDisplay.newB = "B. Adele";
-                QuestionDisplay.newC = "C. Lady Gaga";
-                QuestionDisplay.newD = "D. Rihanna";
-                actualAnswer = "B";
-            }
+            // else if (questionNumber == 30)
+            // {
+            //     QuestionDisplay.newQuestion = "Which singer released the album *25* in 2015?";
+            //     QuestionDisplay.newA = "A. Taylor Swift";
+            //     QuestionDisplay.newB = "B. Adele";
+            //     QuestionDisplay.newC = "C. Lady Gaga";
+            //     QuestionDisplay.newD = "D. Rihanna";
+            //     actualAnswer = "B";
+            // }
 
             //all question go above this line
             QuestionDisplay.pleaseUpdate = false;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class AnswerNoVisual : MonoBehaviour
+public class AnswerEnt : MonoBehaviour
 {
     public GameObject answerAbackBlue; // Blue is waiting
     public GameObject answerAbackGreen; // Green is correct
@@ -34,6 +34,10 @@ public class AnswerNoVisual : MonoBehaviour
     public int scoreValue;
     public int bestScore;
     public GameObject bestDisplay;
+
+    public GameObject visual001;
+    public GameObject visual002;
+    public GameObject visual003;
 
     void Start()
     {
@@ -147,6 +151,10 @@ public class AnswerNoVisual : MonoBehaviour
             bestDisplay.GetComponent<TMP_Text>().text = "Best: " + scoreValue;
         }
         yield return new WaitForSeconds(1.5f);
+
+        visual001.SetActive(false);
+        visual002.SetActive(false);
+        visual003.SetActive(false);
 
         answerAbackGreen.SetActive(false);
         answerBbackGreen.SetActive(false);
