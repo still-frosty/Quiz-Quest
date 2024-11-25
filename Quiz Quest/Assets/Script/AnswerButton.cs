@@ -50,9 +50,15 @@ public class AnswerButton : MonoBehaviour
         currentScore.GetComponent<TMP_Text>().text = "Score: " + scoreValue;
     }
 
+    private bool IsCorrectAnswer(string correctAnswer)
+    {
+        return QuestionGenerate.actualAnswer == correctAnswer || QuestionEnt.actualAnswer == correctAnswer;
+    }
+
     public void AnswerA()
     {
-        if (QuestionGenerate.actualAnswer == "A")
+        // if (QuestionGenerate.actualAnswer == "A" || QuestionEnt.actualAnswer == "A")
+        if (IsCorrectAnswer("A"))
         {
             answerAbackGreen.SetActive(true);
             answerAbackBlue.SetActive(false);
@@ -75,7 +81,8 @@ public class AnswerButton : MonoBehaviour
 
     public void AnswerB()
     {
-        if (QuestionGenerate.actualAnswer == "B")
+        // if (QuestionGenerate.actualAnswer == "B" || QuestionEnt.actualAnswer == "B")
+        if (IsCorrectAnswer("B"))
         {
             answerBbackGreen.SetActive(true);
             answerBbackBlue.SetActive(false);
@@ -98,7 +105,8 @@ public class AnswerButton : MonoBehaviour
 
     public void AnswerC()
     {
-        if (QuestionGenerate.actualAnswer == "C")
+        // if (QuestionGenerate.actualAnswer == "C" || QuestionEnt.actualAnswer == "C")
+        if (IsCorrectAnswer("C"))
         {
             answerCbackGreen.SetActive(true);
             answerCbackBlue.SetActive(false);
@@ -121,7 +129,8 @@ public class AnswerButton : MonoBehaviour
 
     public void AnswerD()
     {
-        if (QuestionGenerate.actualAnswer == "D")
+        // if (QuestionGenerate.actualAnswer == "D" || QuestionEnt.actualAnswer == "D")
+        if (IsCorrectAnswer("D"))
         {
             answerDbackGreen.SetActive(true);
             answerDbackBlue.SetActive(false);
@@ -177,5 +186,6 @@ public class AnswerButton : MonoBehaviour
         answerD.GetComponent<Button>().enabled = true;
 
         QuestionGenerate.displayingQuestion = false;
+        QuestionEnt.displayingQuestion = false;
     }
 }
