@@ -3466,7 +3466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ccac318fbaca34064892698efc48cd22, type: 3}
+  m_Texture: {fileID: 2800000, guid: 08bf8095a1a4349fb98d75b81023366c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4915,7 +4915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970407883}
   - component: {fileID: 1970407882}
-  - component: {fileID: 1970407884}
+  - component: {fileID: 1970407887}
   - component: {fileID: 1970407885}
   - component: {fileID: 1970407886}
   m_Layer: 0
@@ -4960,22 +4960,6 @@ Transform:
   - {fileID: 1057454703}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1970407884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970407881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a10de6bc80ca4438a814f1613618b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionNumber: 0
-  visual001: {fileID: 1085085324}
-  visual002: {fileID: 2012792412}
-  visual003: {fileID: 2091436230}
 --- !u!114 &1970407885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,6 +5012,22 @@ MonoBehaviour:
   bgm: {fileID: 820690188}
   splashImage: {fileID: 1582230424}
   splashText: {fileID: 2122612867}
+--- !u!114 &1970407887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970407881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dece05ec9fa84b2fac918cc6e6a2edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionNumber: 0
+  visual001: {fileID: 1085085324}
+  visual002: {fileID: 2012792412}
+  visual003: {fileID: 2091436230}
 --- !u!1 &1995682987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,7 +5241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5fabaa638001b46078e54a22755872d1, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1c86a87934f4f40dbadee77e632916a7, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5469,7 +5469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9343fd36a48d240f9ade3873e6707427, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2a52fa2d6a30f4b72a103641b63e5e31, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5519,8 +5519,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 62}
-  m_SizeDelta: {x: 456.8946, y: 69.5234}
+  m_AnchoredPosition: {x: 11, y: 70}
+  m_SizeDelta: {x: 590.25, y: 69.5234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122612869
 MonoBehaviour:
@@ -5542,7 +5542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Brain Teasers
+  m_text: History & Nature
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31706cb8c8e1e4d99bb4d0a39c952ca2, type: 2}
   m_sharedMaterial: {fileID: 21066439983934862, guid: 31706cb8c8e1e4d99bb4d0a39c952ca2, type: 2}
