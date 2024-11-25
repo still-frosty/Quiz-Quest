@@ -1,50 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    public AudioSource gameSound;
+    public AudioSource menuMusicSource;
+    public AudioSource gameMusicSource;
+    public AudioSource sfxSource1;
+    public AudioSource sfxSource2;
 
-    private bool isPlaying = true;
+    private static AudioManager instance; // Singleton instance
 
-    private void Awake()
+    void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Destroy(gameObject); 
-        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Load saved settings
+        float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 15f); 
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 15f);
+
+        ApplyMusicVolume(musicVolume);
+        ApplySFXVolume(sfxVolume);
     }
 
-    private void Start()
+    public void ApplyMusicVolume(float volume)
     {
-        if (gameSound != null)
-        {
-            gameSound.loop = true;
-            gameSound.Play();
-        }
+        
+        if (menuMusicSource != null) menuMusicSource.volume = volume;
+        if (gameMusicSource != null) gameMusicSource.volume = volume;
+
+        // Save the setting
+        PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
-    // Function to toggle game sound
-    public void ToggleGameSound()
+    public void ApplySFXVolume(float volume)
     {
-        if (gameSound != null)
-        {
-            if (isPlaying)
-            {
-                gameSound.Pause();
-            }
-            else
-            {
-                gameSound.Play();
-            }
-            isPlaying = !isPlaying;
-        }
+
+        if (sfxSource1 != null) sfxSource1.volume = volume;
+        if (sfxSource2 != null) sfxSource2.volume = volume;
+
+        // Save the setting
+        PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 }
