@@ -226,7 +226,7 @@ public class QuestionFoodCulture : MonoBehaviour
                 QuestionDisplay.newB = "B. Eyo Festival";
                 QuestionDisplay.newC = "C. Durbar Festival";
                 QuestionDisplay.newD = "D. Osun-Osogbo Festival";
-                visual001.SetActive(true); // Image of the Eyo Festival (for example)
+                visual003.SetActive(true); // Image of the Eyo Festival (for example)
                 actualAnswer = "B";
             }
             else if (questionNumber == 24)

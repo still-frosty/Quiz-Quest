@@ -52,7 +52,10 @@ public class AnswerButton : MonoBehaviour
 
     private bool IsCorrectAnswer(string correctAnswer)
     {
-        return QuestionGenerate.actualAnswer == correctAnswer || QuestionEnt.actualAnswer == correctAnswer || QuestionFoodCulture.actualAnswer == correctAnswer;
+        return QuestionGenerate.actualAnswer == correctAnswer ||
+        QuestionEnt.actualAnswer == correctAnswer ||
+        QuestionFoodCulture.actualAnswer == correctAnswer ||
+        QuestionHistoryNature.actualAnswer == correctAnswer;
     }
 
     public void AnswerA()
@@ -188,5 +191,6 @@ public class AnswerButton : MonoBehaviour
         QuestionGenerate.displayingQuestion = false;
         QuestionEnt.displayingQuestion = false;
         QuestionFoodCulture.displayingQuestion = false;
+        QuestionHistoryNature.displayingQuestion = false;
     }
 }
