@@ -19,12 +19,12 @@ public class Menu : MonoBehaviour
 
     public void Entertainment()
     {
-        SceneManager.LoadScene("Entertainment");
+        SceneManager.LoadScene("QuizEntertainment");
     }
 
     public void FoodAndCulture()
     {
-        SceneManager.LoadScene("FoodAndCulture");
+        SceneManager.LoadScene("QuizFoodCulture");
     }
 
     public void ScienceAndTech()
@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour
 
     public void HistoryAndNature()
     {
-        SceneManager.LoadScene("HistoryAndNature");
+        SceneManager.LoadScene("QuizHistoryNature");
     }
 
     public void Return()
