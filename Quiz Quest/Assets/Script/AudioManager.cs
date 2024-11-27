@@ -31,6 +31,16 @@ public class AudioManager : MonoBehaviour
         ApplySFXVolume(sfxVolume);
     }
 
+    void Start()
+    {
+         // Play menu music at the start if it's assigned
+        if (menuMusicSource != null && !menuMusicSource.isPlaying)
+        {
+             menuMusicSource.Play();
+        }
+    }
+
+
     public void ApplyMusicVolume(float volume)
     {
         

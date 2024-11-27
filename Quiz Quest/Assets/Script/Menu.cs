@@ -14,27 +14,27 @@ public class Menu : MonoBehaviour
 
     public void SportsAndGames()
     {
-        SceneManager.LoadScene("SportsAndGames");
+        SceneManager.LoadScene("QuizSportsAndGames");
     }
 
     public void Entertainment()
     {
-        SceneManager.LoadScene("Entertainment");
+        SceneManager.LoadScene("QuizEntertainment");
     }
 
     public void FoodAndCulture()
     {
-        SceneManager.LoadScene("FoodAndCulture");
+        SceneManager.LoadScene("QuizFoodAndCulture");
     }
 
     public void ScienceAndTech()
     {
-        SceneManager.LoadScene("ScienceAndTechnology");
+        SceneManager.LoadScene("QuizScienceAndTechnology");
     }
 
     public void HistoryAndNature()
     {
-        SceneManager.LoadScene("HistoryAndNature");
+        SceneManager.LoadScene("QuizHistoryAndNature");
     }
 
     public void Return()
