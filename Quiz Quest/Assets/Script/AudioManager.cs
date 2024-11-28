@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-         // Play menu music at the start if it's assigned
+        //Play menu music at the start if it's assigned
         if (menuMusicSource != null && !menuMusicSource.isPlaying)
         {
              menuMusicSource.Play();
