@@ -206,18 +206,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: HistoryAndNature
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 716244446}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadingScene
@@ -526,12 +514,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 354614317885353428, guid: d051939166c85094bb0557552eeee087, type: 3}
   m_PrefabInstance: {fileID: 716244445}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 716244447}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 375b97549ca6a764499f820d11e973e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &716244447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354316270612194936, guid: d051939166c85094bb0557552eeee087, type: 3}
+  m_PrefabInstance: {fileID: 716244445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &843852753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,13 +1125,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
+      - m_Target: {fileID: 716244447}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: SportsAndGames
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1439,18 +1432,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: BrainTeasers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 716244446}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadingScene
@@ -1615,18 +1596,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Return
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 716244446}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadingScene
@@ -1761,18 +1730,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Entertainment
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 716244446}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadingScene
@@ -2115,13 +2072,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: fa9171007bd35ff4497c3119e9a662ff, type: 3}
 --- !u!114 &1830372826 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1012026149862505136, guid: fa9171007bd35ff4497c3119e9a662ff, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8086326305631859556, guid: fa9171007bd35ff4497c3119e9a662ff, type: 3}
   m_PrefabInstance: {fileID: 1830372825}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1830372827 stripped
@@ -2218,18 +2175,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: FoodAndCulture
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 716244446}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadingScene
@@ -2379,9 +2324,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082102882}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: ScienceAndTech
+      - m_Target: {fileID: 716244446}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
