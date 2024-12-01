@@ -12,29 +12,28 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("QuizBoard");
     }
 
-    public void SportsAndGames()
-    {
-        SceneManager.LoadScene("QuizSportsAndGames");
-    }
-
     public void Entertainment()
     {
         SceneManager.LoadScene("QuizEntertainment");
     }
-
-    public void FoodAndCulture()
+    public void SportsAndGames()
     {
-        SceneManager.LoadScene("QuizFoodAndCulture");
+        SceneManager.LoadScene("QuizSportGames");
     }
+
 
     public void ScienceAndTech()
     {
-        SceneManager.LoadScene("QuizScienceAndTechnology");
+        SceneManager.LoadScene("QuizScienceTech");
     }
 
+    public void FoodAndCulture()
+    {
+        SceneManager.LoadScene("QuizFoodCulture");
+    }
     public void HistoryAndNature()
     {
-        SceneManager.LoadScene("QuizHistoryAndNature");
+        SceneManager.LoadScene("QuizHistoryNature");
     }
 
     public void Return()

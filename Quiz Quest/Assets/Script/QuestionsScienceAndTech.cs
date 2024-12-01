@@ -22,11 +22,12 @@ public class QuestionsScienceAndTech : MonoBehaviour
             questionNumber = Random.Range(1, 30);
             if (questionNumber == 1)
             {
-                QuestionDisplay.newQuestion = "Which of the following men does not have a chemical element named after him?";
+                QuestionDisplay.newQuestion = "What is the name of this Scientist?";
                 QuestionDisplay.newA = "A. Sir Isaac Newton";
                 QuestionDisplay.newB = "B. Niels Bohr";
                 QuestionDisplay.newC = "C. Albert Einstein";
                 QuestionDisplay.newD = "D. Enrico Fermi";
+                visual003.SetActive(true);
                 actualAnswer = "A";
             }
             else if (questionNumber == 2)
@@ -153,7 +154,6 @@ public class QuestionsScienceAndTech : MonoBehaviour
                 QuestionDisplay.newB = "B. Au";
                 QuestionDisplay.newC = "C. Pb";
                 QuestionDisplay.newD = "D. Hg";
-                visual001.SetActive(true);
                 actualAnswer = "B";
             }
             else if (questionNumber == 16)
@@ -191,6 +191,7 @@ public class QuestionsScienceAndTech : MonoBehaviour
                 QuestionDisplay.newB = "B. Hydrogen";
                 QuestionDisplay.newC = "C. Oxygen";
                 QuestionDisplay.newD = "D. Helium";
+                visual001.SetActive(true);
                 actualAnswer = "B";
             }
             else if (questionNumber == 20)
@@ -227,7 +228,6 @@ public class QuestionsScienceAndTech : MonoBehaviour
                 QuestionDisplay.newB = "B. Liver";
                 QuestionDisplay.newC = "C. Kidney";
                 QuestionDisplay.newD = "D. Lungs";
-                visual003.SetActive(true);
                 actualAnswer = "C";
             }
             else if (questionNumber == 24)
