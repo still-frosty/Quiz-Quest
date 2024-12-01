@@ -73,8 +73,7 @@ public class DiceRolling : MonoBehaviour
     private void HighlightCorrectAnswer()
     {
         // Example: Highlight the correct answer
-        // Assuming you have access to the correct answer from your game logic
-        string correctAnswer = QuestionGenerate.actualAnswer;
+        string correctAnswer = QuestionGenerate.actualAnswer || QuestionEnt.actualAnswer || QuestionFoodCulture.actualAnswer || QuestionHistoryNature.actualAnswer;
 
         // Example: Change the button color of the correct answer
         if (correctAnswer == "A") answerAbackGreen.SetActive(true);
