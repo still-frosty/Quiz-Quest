@@ -73,7 +73,21 @@ public class DiceRolling : MonoBehaviour
     private void HighlightCorrectAnswer()
     {
         // Example: Highlight the correct answer
-        string correctAnswer = QuestionGenerate.actualAnswer || QuestionEnt.actualAnswer || QuestionFoodCulture.actualAnswer || QuestionHistoryNature.actualAnswer;
+        // string correctAnswer = QuestionGenerate.actualAnswer;
+        
+    string correctAnswer = 
+        QuestionGenerate.displayingQuestion ? QuestionGenerate.actualAnswer :
+        QuestionEnt.displayingQuestion ? QuestionEnt.actualAnswer :
+        QuestionFoodCulture.displayingQuestion ? QuestionFoodCulture.actualAnswer :
+        QuestionHistoryNature.displayingQuestion ? QuestionHistoryNature.actualAnswer :
+        null; // Fallback if no question is active
+
+    // Check if a correct answer was retrieved
+    if (correctAnswer == null)
+    {
+        Debug.LogWarning("No active question found to highlight the correct answer.");
+        return;
+    }
 
         // Example: Change the button color of the correct answer
         if (correctAnswer == "A") answerAbackGreen.SetActive(true);

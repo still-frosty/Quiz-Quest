@@ -55,7 +55,9 @@ public class AnswerButton : MonoBehaviour
         return QuestionGenerate.actualAnswer == correctAnswer ||
         QuestionEnt.actualAnswer == correctAnswer ||
         QuestionFoodCulture.actualAnswer == correctAnswer ||
-        QuestionHistoryNature.actualAnswer == correctAnswer;
+        QuestionHistoryNature.actualAnswer == correctAnswer ||
+        QuestionsScienceAndTech.actualAnswer == correctAnswer ||
+        QuestionSportAndGame.actualAnswer == correctAnswer;
     }
 
     public void AnswerA()
@@ -192,5 +194,7 @@ public class AnswerButton : MonoBehaviour
         QuestionEnt.displayingQuestion = false;
         QuestionFoodCulture.displayingQuestion = false;
         QuestionHistoryNature.displayingQuestion = false;
+        QuestionsScienceAndTech.displayingQuestion = false;
+        QuestionSportAndGame.displayingQuestion = false;
     }
 }
