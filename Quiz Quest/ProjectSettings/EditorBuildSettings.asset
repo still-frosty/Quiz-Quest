@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/QuizHistoryNature.unity
     guid: f57382b40885547f2b2e5964e346f455
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: 70a93a38781998349940049af703d421
+    path: Assets/Scenes/QuizScienceTech.unity
+    guid: 2ed9f15742643432e959f8a61ab9e7ef
+  - enabled: 1
+    path: Assets/Scenes/QuizSportGames.unity
+    guid: 74b32e7b822184d4c907ffe5f6639896
   m_configObjects: {}
