@@ -19,7 +19,7 @@ public class QuestionDisplay : MonoBehaviour
 
     public static bool pleaseUpdate = false;
 
-    void Update()
+    void FixedUpdate()
     {
         if (pleaseUpdate == false)
         {
