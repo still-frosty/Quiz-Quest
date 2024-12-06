@@ -6186,14 +6186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.1960784, g: 0.8117647, b: 0.5549135, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ace110535ee3ec44d96efdd852a33a87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff48317f269d8c74096088b93fbcbcb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6246,7 +6246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -279, y: 446}
+  m_AnchoredPosition: {x: -280.3, y: 467.1}
   m_SizeDelta: {x: 100, y: 102.6681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4593428606882959465
@@ -6341,6 +6341,11 @@ MonoBehaviour:
   answerBbackGreen: {fileID: 553858869}
   answerCbackGreen: {fileID: 241524257}
   answerDbackGreen: {fileID: 384214108}
+  remainingRollsText: {fileID: 0}
+  maxRolls: 3
+  pointsText: {fileID: 0}
+  bestScoreText: {fileID: 0}
+  costPerRoll: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
