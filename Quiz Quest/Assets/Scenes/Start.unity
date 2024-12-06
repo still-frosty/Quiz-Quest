@@ -1291,8 +1291,8 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: '       Dont''t forget to roll the dice for mystrey rewards. You get 3
-    free rolls.After that you''ll roll with your points, so be careful with your
-    rolls!'
+    free rolls.After that you''ll roll wait for another 45mins to use the dice, so
+    be careful with your rolls!'
 --- !u!222 &1143746129
 CanvasRenderer:
   m_ObjectHideFlags: 0
