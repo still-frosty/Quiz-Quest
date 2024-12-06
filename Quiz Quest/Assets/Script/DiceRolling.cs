@@ -75,6 +75,15 @@ public class DiceRolling : MonoBehaviour
 
         // Start the dice rolling process
         StartCoroutine(RollAnimation());
+        UpdateUI();
+    }
+
+    private System.Collections.IEnumerator SimulateDiceRoll()
+    {
+        Debug.Log("Rolling the dice...");
+        yield return new WaitForSeconds(1); // Simulate rolling delay
+        Debug.Log("Dice roll complete.");
+        isRolling = false; // Allow rolling again
     }
 
     private IEnumerator RollAnimation()
@@ -217,7 +226,6 @@ public class DiceRolling : MonoBehaviour
         QuestionHistoryNature.displayingQuestion ? QuestionHistoryNature.actualAnswer :
         QuestionsScienceAndTech.displayingQuestion ? QuestionsScienceAndTech.actualAnswer :
         QuestionSportAndGame.displayingQuestion ? QuestionSportAndGame.actualAnswer :
-        // QuestionTravelAndCulture.displayingQuestion ? QuestionTravelAndCulture.actualAnswer :
         null; // Fallback if no question is active
 
     // Check if a correct answer was retrieved
@@ -261,6 +269,14 @@ public class DiceRolling : MonoBehaviour
         {
             Debug.Log("Not enough points to buy more rolls!");
         }
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        // Update the UI elements to reflect current rolls and points
+        remainingRollsText.text = "Rolls: " + remainingRolls;
+        // pointsText.text = "Points: " + points;
     }
 
 }
