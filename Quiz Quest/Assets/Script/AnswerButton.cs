@@ -38,9 +38,11 @@ public class AnswerButton : MonoBehaviour
     public GameObject visual001;
     public GameObject visual002;
     public GameObject visual003;
+    private string bestScoreKey;
 
     void Start()
     {
+        bestScoreKey = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name + "_BestScoreQuiz";
         bestScore = PlayerPrefs.GetInt("BestScoreQuiz", 0);
         bestDisplay.GetComponent<TMP_Text>().text = "Best: " + bestScore;
     }
@@ -158,9 +160,12 @@ public class AnswerButton : MonoBehaviour
 
     IEnumerator NextQuestion()
     {
+        // bestScoreKey = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name + "_BestScoreQuiz";
+
         if (bestScore < scoreValue)
         {
-            PlayerPrefs.SetInt("BestScoreQuiz", scoreValue);
+            // PlayerPrefs.SetInt("BestScoreQuiz", scoreValue);
+            PlayerPrefs.SetInt(bestScoreKey, scoreValue);
             bestScore = scoreValue;
             bestDisplay.GetComponent<TMP_Text>().text = "Best: " + scoreValue;
         }
