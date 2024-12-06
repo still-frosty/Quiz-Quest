@@ -15,87 +15,133 @@ public class DiceRolling : MonoBehaviour
     public GameObject answerDbackGreen;
 
     public Text remainingRollsText; // UI element to display remaining rolls
-    public int maxRolls = 3; // Maximum number of times the dice can be used
-    private int remainingRolls; // Tracks the remaining rolls
-
-    public TMP_Text pointsText; // UI element to display points
-    private int points = 0; // Player's current points
-    public TMP_Text bestScoreText; // UI element to display the best score
+    // public int maxRolls = 3; // Maximum number of times the dice can be used
+    private int remainingRolls = 3; // Tracks the remaining rolls
+    public TMP_Text cooldownText; 
     private int bestScore = 0; // Player's best score
     private string bestScoreKey = "BestScore";
 
     public int costPerRoll = 10; // Points required to buy one extra roll
+    private bool isOnCooldown = false;         // Track cooldown status
+    private float cooldownDuration = 2700f;    // 45 minutes in seconds
+    private float cooldownTimeRemaining = 0f;
 
     void Start()
     {
-        // Initialize the remaining rolls with maxRolls value
-        remainingRolls = maxRolls;
         UpdateRemainingRollsText();
-        UpdatePointsText(); // Update the points display
 
-        // Load the best score from PlayerPrefs
-        bestScore = PlayerPrefs.GetInt(bestScoreKey, 0);
-        // bestScoreText.text = "Best: " + bestScore; // Update the best score display
-
-        if (resultText == null)
+        if (cooldownText != null)
         {
-            resultText = GameObject.Find("ResultText")?.GetComponent<Text>();
-            if (resultText == null)
-            {
-                Debug.LogError("ResultText GameObject is not found. Please assign it in the Inspector.");
-            }
+            cooldownText.text = ""; // Hide cooldown text initially
+        }
+
+        if (resultText != null)
+        {
+            resultText.gameObject.SetActive(false); // Hide result text initially
         }
     }
+
      void Update()
     {
-        // Optionally check if rolls are used up and offer to buy more rolls
-        if (remainingRolls <= 0)
+        if (isOnCooldown)
         {
-            BuyMoreRolls();
+            // Decrease cooldown time and update the UI
+            cooldownTimeRemaining -= Time.deltaTime;
+            UpdateCooldownText();
+
+            // If cooldown is over, reset rolls
+            if (cooldownTimeRemaining <= 0)
+            {
+                ResetDiceRolls();
+            }
         }
     }
 
     public void RollDice()
     {
-        if (isRolling || remainingRolls <= 0) return; // Prevent rolling if already rolling or if no rolls left
+        // Prevent rolling if already rolling, no rolls left, or on cooldown
+        if (isRolling || remainingRolls <= 0 || isOnCooldown)
+        {
+            if (remainingRolls <= 0 && !isOnCooldown)
+            {
+                StartCooldown();
+            }
+            return;
+        }
 
-        isRolling = true;
+        // Decrement remaining rolls immediately, and update the UI
+        remainingRolls--;
+        UpdateRemainingRollsText();
+
+        // Start the dice rolling process
         StartCoroutine(RollAnimation());
     }
 
     private IEnumerator RollAnimation()
     {
-        // diceRollSound?.Play();
+        isRolling = true;
 
-        // Simulate the dice rolling animation for 1 second
+        // Simulate dice rolling animation (you can replace this with your animation logic)
         for (int i = 0; i < 10; i++)
         {
             int randomRoll = Random.Range(1, 7); // Random number between 1 and 6
             resultText.text = "Rolling... " + randomRoll;
 
-            // Rotate the dice to simulate rolling
+                // Rotate the dice to simulate rolling
             dice.transform.Rotate(Random.Range(10f, 50f), Random.Range(10f, 50f), Random.Range(10f, 50f));
 
             yield return new WaitForSeconds(0.1f);
         }
 
-        int finalRoll = Random.Range(1, 7); // Final dice roll
-        resultText.text = "You rolled: " + finalRoll;
+        int diceResult = Random.Range(1, 7); // Roll a number between 1 and 6
+        resultText.text = "You rolled: " + diceResult;
         isRolling = false;
 
         // Trigger hint based on the dice roll
-        TriggerHint(finalRoll);
-
+        TriggerHint(diceResult);
         // Reset the dice rotation (set to a fixed value or stop it at a certain angle)
         dice.transform.rotation = Quaternion.Euler(0, 0, 0);  // Reset rotation to initial state (you can adjust as needed)
+        Debug.Log("You rolled: " + diceResult);
 
-        // Decrease the number of remaining rolls
-        remainingRolls--;
-        UpdateRemainingRollsText(); // Update the UI to show remaining rolls
+        // Check if rolls are exhausted and start cooldown
+        if (remainingRolls <= 0 && !isOnCooldown)
+        {
+            StartCooldown();
+        }
 
-        // Set isRolling back to false, allowing the next roll
+        DisplayResultText(resultText.text);
+
         isRolling = false;
     }
+
+     private void DisplayResultText(string hintMessage)
+    {
+        if (resultText != null)
+        {
+            resultText.gameObject.SetActive(true); // Make result text visible
+            resultText.text = hintMessage;
+
+            // Wait for 5 seconds before hiding the result
+            StartCoroutine(HideResultText());
+        }
+    }
+
+    private IEnumerator HideResultText()
+    {
+        yield return new WaitForSeconds(5f); // Wait for 1 seconds
+        if (resultText != null)
+        {
+            resultText.gameObject.SetActive(false); // Hide result text
+        }
+    }
+
+    private void StartCooldown()
+    {
+        isOnCooldown = true;
+        cooldownTimeRemaining = cooldownDuration;
+        UpdateCooldownText();
+    }
+
 
     private void TriggerHint(int roll)
     {
@@ -130,6 +176,37 @@ public class DiceRolling : MonoBehaviour
         resultText.text = hintMessage;
     }
 
+    private void ResetDiceRolls()
+    {
+        isOnCooldown = false;
+        remainingRolls = 3;
+        UpdateRemainingRollsText();
+
+        if (cooldownText != null)
+        {
+            cooldownText.text = ""; // Clear cooldown text
+        }
+
+        Debug.Log("Dice rolls reset! You can roll again.");
+    }
+
+    private void UpdateCooldownText()
+    {
+        if (cooldownText != null)
+        {
+            if (cooldownTimeRemaining > 0)
+            {
+                int minutes = Mathf.FloorToInt(cooldownTimeRemaining / 60);
+                int seconds = Mathf.FloorToInt(cooldownTimeRemaining % 60);
+                cooldownText.text = $"Next Roll In: {minutes:D2}:{seconds:D2}";
+            }
+            else
+            {
+                cooldownText.text = "";
+            }
+        }
+    }
+
     private void HighlightCorrectAnswer()
     {
 
@@ -160,28 +237,11 @@ public class DiceRolling : MonoBehaviour
         // Update the remaining rolls UI
     private void UpdateRemainingRollsText()
     {
-        remainingRollsText.text = "Remaining Rolls: " + remainingRolls;
-    }
-
-    // Update the points UI
-    private void UpdatePointsText()
-{
-    if (pointsText != null)
-    {
-        pointsText.text = "Points: " + points;
-    }
-    else
-    {
-        Debug.LogError("pointsText is not assigned in the Inspector.");
-    }
-    // bestScoreText.text = "Best: " + bestScore;
-}
-
-    // Add points (you can call this method based on game actions)
-    public void AddPoints(int amount)
-    {
-        points += amount;
-        UpdatePointsText(); // Update the points UI
+        // remainingRollsText.text = "Remaining Rolls: " + remainingRolls;
+        if (remainingRollsText != null)
+        {
+            remainingRollsText.text = "Remaining Rolls: " + remainingRolls;
+        }
     }
 
     // Buy more rolls with points
@@ -192,9 +252,9 @@ public class DiceRolling : MonoBehaviour
             bestScore -= costPerRoll; // Deduct points from bestScore
             remainingRolls++; // Increase remaining rolls
             PlayerPrefs.SetInt(bestScoreKey, bestScore); // Save the updated bestScore in PlayerPrefs
-            UpdatePointsText(); // Update the points UI
+            // UpdatePointsText(); // Update the points UI
             UpdateRemainingRollsText(); // Update the remaining rolls UI
-            bestScoreText.text = "Best: " + bestScore; // Update best score display
+            // bestScoreText.text = "Best: " + bestScore; // Update best score display
             Debug.Log("You bought more rolls!");
         }
         else
