@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class QuestionDisplay : MonoBehaviour
 {
@@ -19,9 +20,10 @@ public class QuestionDisplay : MonoBehaviour
 
     public static bool pleaseUpdate = false;
 
-    void Awake()
+    void Update()
     {
-        if (pleaseUpdate == false)
+        RefreshUI();
+        if (!pleaseUpdate)
         {
             pleaseUpdate = true;
             StartCoroutine(PushTextOnScreen());
@@ -36,5 +38,10 @@ public class QuestionDisplay : MonoBehaviour
         answerB.GetComponent<TMP_Text>().text = newB;
         answerC.GetComponent<TMP_Text>().text = newC;
         answerD.GetComponent<TMP_Text>().text = newD;
+    }
+    void RefreshUI()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(screenQuestion);
     }
 }
